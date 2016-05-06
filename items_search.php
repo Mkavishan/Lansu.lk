@@ -23,9 +23,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="js/jquery.js"></script><!--DON'T MOVE THIS INTO BELOW (Anushka)-->
+
 </head><!--/head-->
 
-<body>
+<body id="bdy">
 	<div class="container">
 		<div class="well well-sm" style="background-color:#ebebe0;">
 			<div class="row">
@@ -42,19 +45,34 @@
 							    
 							    <div class="modal-body">
 							    	<div class="row">
-							    		<div class="col-sm-6">
-							              <p>Select District</p>
-							              <!-- District here -->
-							              <button type="button" class="btn btn-default btn-block">Matara</button>
-							              <button type="button" class="btn btn-default btn-block">Galle</button>
-							              <button type="button" class="btn btn-default btn-block">Hambantota</button>
-							              <button type="button" class="btn btn-default btn-block">Colombo</button>
-							              <button type="button" class="btn btn-default btn-block">Kaluthara</button>
-							              <button type="button" class="btn btn-default btn-block">Rathnapura</button>
-							    		</div>
-							    		<div class="col-sm-6">
-							    			dfdsfsdfdf
-							    		</div>	   
+						              <p>Select District</p>
+						              <!-- District here -->
+						              <button type="button" id="amparaId"onclick="showItem(this.value);" value="Ampara" class="btn btn-default btn-block">Ampara</button>
+						              <button type="button" class="btn btn-default btn-block">Anuradhapura</button>
+						              <button type="button" class="btn btn-default btn-block">Badulla</button>
+						              <button type="button" class="btn btn-default btn-block">Batticaloa</button>
+						              <button type="button" class="btn btn-default btn-block">Colombo</button>
+						              <button type="button" class="btn btn-default btn-block">Galle</button>  
+						              <button type="button" class="btn btn-default btn-block">Gampaha</button>
+						              <button type="button" class="btn btn-default btn-block">Hambantota</button>
+						              <button type="button" class="btn btn-default btn-block">Jaffna</button>
+						              <button type="button" class="btn btn-default btn-block">Kalutara</button>
+						              <button type="button" class="btn btn-default btn-block">Kandy</button>
+						              <button type="button" class="btn btn-default btn-block">Kegalle</button>
+						              <button type="button" class="btn btn-default btn-block">Kilinochchi</button>
+						              <button type="button" class="btn btn-default btn-block">Kurunegala</button>
+						              <button type="button" class="btn btn-default btn-block">Mannar</button>
+						              <button type="button" class="btn btn-default btn-block">Matale</button>
+						              <button type="button" class="btn btn-default btn-block">Matara</button>
+						              <button type="button" class="btn btn-default btn-block">Monaragala</button>
+						              <button type="button" class="btn btn-default btn-block">Mullaitivu</button>
+						              <button type="button" class="btn btn-default btn-block">Nuwara Eliya</button>
+						              <button type="button" class="btn btn-default btn-block">Polonnaruwa</button>
+						              <button type="button" class="btn btn-default btn-block">Puttalam</button>
+						              <button type="button" class="btn btn-default btn-block">Ratnapura</button>
+						              <button type="button" class="btn btn-default btn-block">Trincomalee</button>
+						              <button type="button" class="btn btn-default btn-block">Vavuniya</button>		
+						              					               
 							      </div>
 							  </div>
 							    <div class="modal-footer">
@@ -76,7 +94,7 @@
 							    </div>
 							    <div class="modal-body">
 							      <p>This is a large modal.</p>
-							      <!-- District here -->
+							      <!-- Item category here -->
 							      <button type="button" class="btn btn-default btn-block">Computers</button>
 							      <button type="button" class="btn btn-default btn-block">Houses</button>
 							      <button type="button" class="btn btn-default btn-block">Vehicles</button>
@@ -108,8 +126,11 @@
 				</div>					
 			</div>
 		</div>
+		<div class="row" id="item_area">
+
+		</div>
 	</div>
-	<script src="js/jquery.js"></script>
+	<script src="js/itemSearch.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
