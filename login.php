@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "header.php" ?>
+<?php 
+ob_start();
+include "header.php" ?>
 <?php
 include "database/dbconnect.php"; 
 $query = "SELECT user_email FROM user";
@@ -96,14 +98,14 @@ function confirmvalid()
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+						<form name="form2" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+							<input type="text" name='textfield' placeholder="Email" required/>
+						<input type="password" name='textfield2' placeholder="Password" required/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" name="button" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
@@ -140,7 +142,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	  $sql="INSERT INTO user(user_name,user_email,user_password_hash,login_type)VALUES('$username','$email','$password','none')";	
 	  $result = mysqli_query($dbconnection, $sql);
 	 
-  }}
+  }
+  
+  elseif(isset($_POST["button"]) )
+  {
+	  include "database/dbconnect.php"; 
+	 $email = $_POST['textfield'];
+	 $password = $_POST['textfield2'];
+
+	$email = stripslashes($email);
+	$password = stripslashes($password);
+
+	$password = md5($password);
+
+
+	$sql="SELECT user_name FROM user WHERE user_email='$email' and user_password_hash='$password'";
+	$result=$dbconnection->query($sql);
+	if($result->num_rows==1)
+	{
+	  
+		  header("location:index.php"); 
+	}
+	else
+	{
+	echo '<script language="javascript">alert("your login is wrong!")</script>';
+	}
+
+$dbconnection->close();
+
+	  
+  }
+  
+  
+  }
 ?>
 	
 	<?php include "footer.php" ; ?>
