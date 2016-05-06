@@ -49,10 +49,7 @@ if(!isset($_SESSION))
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-                     
-		<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-		<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-		<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+
         <?php 		
 	if(isset($_SESSION["lansu_username"]) ) { //Checking whether a user has logged in
 	?>
