@@ -139,8 +139,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	  $password=$_POST['password'];
 	  $password=md5($password);
 	  $email=$_POST['email'];
-	  $sql="INSERT INTO user(user_name,user_email,user_password_hash,login_type)VALUES('$username','$email','$password','none')";	
+	  $sql="INSERT INTO user(user_name,user_email,user_password_hash,login_type,user_activation)VALUES('$username','$email','$password','none',1)";	
 	  $result = mysqli_query($dbconnection, $sql);
+	  
+	  session_start();
+	  $_SESSION["lansu_username"] = $username;
+	  $_SESSION["lansu_email"] = $email;
+	  header("location:index.php");
+	  
 	 
   }
   
@@ -160,8 +166,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	$result=$dbconnection->query($sql);
 	if($result->num_rows==1)
 	{
-	  
-		  header("location:index.php"); 
+	   $rows = mysqli_fetch_assoc($result);
+	  $usertype=$rows['user_type'];
+	  if($usertype=="admin")
+	  {
+		  session_start();
+		 $_SESSION["lansu_username"] = $username;
+	 	 $_SESSION["lansu_email"] = $email;
+		 $_SESSION['lansu_user_type']= $rows['user_type'];
+		  header("location:admin/index.php"); 
+	  }
+	  else
+	  {
+	  session_start();
+	  $_SESSION["lansu_username"] = $username;
+	  $_SESSION["lansu_email"] = $email;
+	  header("location:index.php");
+	  }
 	}
 	else
 	{

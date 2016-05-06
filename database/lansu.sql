@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2016 at 09:33 AM
+-- Generation Time: May 06, 2016 at 10:07 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -77,19 +77,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `phone_number` int(12) NOT NULL,
   `address` varchar(100) NOT NULL,
   `user_activation` int(5) NOT NULL,
+  `user_type` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password_hash`, `login_type`, `phone_number`, `address`, `user_activation`) VALUES
-(6, 'janith', 'kamalamal85@gmail.com', 827, 'none', 0, '', 0),
-(8, 'janith', 'janith@gmail.com', 827, 'none', 0, '', 0),
-(10, 'janith', 'jankavi85@gmail.com', 827, 'none', 0, '', 0),
-(12, 'wije', 'wije@gmail.com', 827, 'none', 0, '', 0),
-(13, 'miyuru', 'miyuru@gmail.com', 827, 'none', 0, '', 0);
+INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password_hash`, `login_type`, `phone_number`, `address`, `user_activation`, `user_type`) VALUES
+(14, 'kavi', 'kavi@gmail.com', 0, 'none', 0, '', 1, NULL);
 
 --
 -- Constraints for dumped tables
