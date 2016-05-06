@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	$password = md5($password);
 
 
-	$sql="SELECT user_name FROM user WHERE user_email='$email' and user_password_hash='$password'";
+	$sql="SELECT user_name,user_type FROM user WHERE user_email='$email' and user_password_hash='$password'";
 	$result=$dbconnection->query($sql);
 	if($result->num_rows==1)
 	{
@@ -171,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	  if($usertype=="admin")
 	  {
 		  session_start();
-		 $_SESSION["lansu_username"] = $username;
+		 $_SESSION["lansu_username"] = $rows['user_name'];
 	 	 $_SESSION["lansu_email"] = $email;
 		 $_SESSION['lansu_user_type']= $rows['user_type'];
 		  header("location:admin/index.php"); 
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	  else
 	  {
 	  session_start();
-	  $_SESSION["lansu_username"] = $username;
+	   $_SESSION["lansu_username"] = $rows['user_name'];
 	  $_SESSION["lansu_email"] = $email;
 	  header("location:index.php");
 	  }
