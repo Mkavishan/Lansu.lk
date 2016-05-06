@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
 
     <meta charset="utf-8">
@@ -27,6 +28,9 @@
     <script src="js/jquery.js"></script><!--DON'T MOVE THIS INTO BELOW (Anushka)-->
 
 </head><!--/head-->
+=======
+<?php include "header.php" ?>
+>>>>>>> 7d87c2e2da4812547301461e63cf791308cbcba0
 
 <body id="bdy">
 	<div class="container">
