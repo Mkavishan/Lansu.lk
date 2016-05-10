@@ -30,6 +30,7 @@
 </head><!--/head-->
 
 <body>
+<<<<<<< HEAD
 	<?php include "header.php"; ?>
 
 	?>
@@ -140,6 +141,10 @@
 			<div class="row" id="item_area">
 
 			</div>
+=======
+	<div class="container">
+		<div class="well well-sm" style="background-color:#ebebe0;">
+>>>>>>> a86e5bba4b81c155812ed90310b9bea8409e67a5
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
