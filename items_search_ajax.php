@@ -1,16 +1,17 @@
 <?php
-	include 'db_connection.php';
+	include 'database/dbconnect.php';
 	$district = strval($_GET['district']);
 
-	$sql = "SELECT * FROM itemdetails WHERE district = '".$district."'";
-	$result = $conn->query($sql);
+	$sql = "SELECT * FROM additem WHERE district = '".$district."'";
+	$result = mysqli_query($dbconnection, $sql);
 
-	if ($result->num_rows > 0) {
-	    while($row = $result->fetch_assoc()) {
-	        $item_name=$row['item_name'];
+	if (mysqli_num_rows($result) > 0) {
+	    // output data of each row
+	    while($row = mysqli_fetch_assoc($result)) {
+	        $title=$row['title'];
 	        $price=$row['price'];
 	        ?>
-	        <button type="button"><?php echo $item_name."-->".$price;?></button>
+	        <button class="btn btn-danger" type="button"><?php echo $title."-->".$price;?></button>
 	        <?php
 	        echo "<br>";
 	    }
@@ -18,5 +19,7 @@
 	    echo "0 results";
 	}
 
-	$conn->close();
+
+	mysqli_close($dbconnection);
+	
 ?>

@@ -33,7 +33,6 @@ if(!isset($_SESSION))
 </head><!--/head-->
 
 <body>
-	
 	<header id="header"><!--header-->
 			
 		<div class="header-middle"><!--header-middle-->
@@ -66,3 +65,5 @@ if(!isset($_SESSION))
 			</div>
 		</div><!--/header-middle-->
 	</header><!--/header-->
+</body>
+</html>

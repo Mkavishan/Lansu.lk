@@ -1,4 +1,8 @@
-<?php include "header.php"; ?>
+<html lang="en">
+<body>
+	<?php include "header.php"; ?>
+	<?php //include "items_search.php" ?>
+
 	<section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
