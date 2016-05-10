@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <?php include "header.php" ?>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Over View</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Edit</a></li>
-      <li class="active"><a href="logout.php">Log Out</a></li>
-      <!--
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li> 
-      !-->
-    </ul>
-  </div>
-</nav>
-  
 <div class="container">
-  <h1>Profile</h1>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+  <div class="col-md-2">
+  </div>
+  <div class ="col-md-8">
+    <div class="row">
+      <h3> </h3>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel panel-warning">
+      <div class="panel-heading">
+        <div class="panel-title"> <center><h4> My Profile</h4> </center></div>
+        </div>
+      </div>  
+        <div class="panel-body"> 
+          <div class="row">
+          <div class="col-md-9"> 
+            <p>Name : Miyuru </p>
+            <p>E-mail : miyurukavishan@gmail.com </p>
+            <p>Telephone NO : 0716179152 </p>
+          </div>
+          <div class="col-md-2">
+            <img src="images/profile/dummy.jpg">
+          </div>
+        </div>
+        <div class="row">
+          <p> </p>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-10">
+            <div class="progress ">
+              <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="0"
+                aria-valuemin="100" style="width:40%">
+              <span class=""> 40% Profile Completed </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-</div>
-</div>
 </body>
 </html>

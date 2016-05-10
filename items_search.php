@@ -32,7 +32,7 @@
 <?php include "header.php" ?>
 >>>>>>> 7d87c2e2da4812547301461e63cf791308cbcba0
 
-<body id="bdy">
+<body>
 	<div class="container">
 		<div class="well well-sm" style="background-color:#ebebe0;">
 			<div class="row">
